@@ -1,10 +1,12 @@
-const withPWA = require("next-pwa")({
+import withPWA from "next-pwa";
+
+const pwaConfig = {
   dest: "public",
   register: true,
   skipWaiting: true,
-});
+};
 
-module.exports = withPWA({
+export default withPWA(pwaConfig)({
   reactStrictMode: true,
   turbopack: {}, // 👈 This silences the Turbopack conflict
 });
